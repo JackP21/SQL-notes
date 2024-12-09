@@ -31,9 +31,9 @@ SELECT DISTINCT head FROM database; -
 +--------+
 |  Head  |
 +--------+
-|  data  |
-|  data  |
-|  data  |
+|  data1 |
+|  data2 |
+|  data3 |
 +--------+
 Using COUNT along with DISTINCT will show you the number of each instead of the items in the column.
 SELECT COUNT(DISTINCT head) FROM database;.
