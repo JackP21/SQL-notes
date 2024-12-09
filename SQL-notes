@@ -23,6 +23,17 @@ To access this the command will be $sqlite3 this is allow you access the languag
 One last main command is .schema this calls on the actual database showing the user what the name of each header column is.
 
 One of the main commmands for sqlite3 would look like this:
-SELECT ______ FROM ______
-This would allow the user to SELECT a column of their choosing FROM the database they have access too. Instead of choosing a single column or multiple by using a comma (SELECT _____, ____ FROM ...) the user can use the * symbol, this selects all columns from the database.
-An add-on to the query above would be COUNT, this will tell you the number of items in the database, an example would be     SELECT COUNT(*) FROM database,
+SELECT ______ FROM ______;
+This would allow the user to SELECT a column of their choosing FROM the database they have access too. Instead of choosing a single column or multiple by using a comma (SELECT _____, ____ FROM ...;) the user can use the * symbol, this selects all columns from the database.
+An add-on to the query above would be COUNT, this will tell you the number of items in the database, an example would be     SELECT COUNT(*) FROM database;.
+DISTINCT brings out a table like this:
+SELECT DISTINCT head FROM database; - 
++--------+
+|  Head  |
++--------+
+|  data  |
+|  data  |
+|  data  |
++--------+
+Using COUNT along with DISTINCT will show you the number of each instead of the items in the column.
+SELECT COUNT(DISTINCT head) FROM database;
