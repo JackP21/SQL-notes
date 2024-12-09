@@ -1,3 +1,121 @@
+
 SQL
+
 ======
+
+SQL (Structured Query Language) is a programming language used to manage and manipulate relational databases. 
+It allows users to interact with databases by using operations such as:
+- Querying (SELECT)
+- Updating (UPDATE)
+- Inserting (INSERT)
+- Deleting (DELETE)
+
+One of the SQL uses are for flat file databases, these include TXT files and CSV files, the files are mainly text files filled with lines and lines of data for the chosen subject. 
+
+CRUD is an anagram that is commonly used throughout SQL, these key words are:
+- CREATE: Insert new records (INSERT).
+- READ: Retrieve data (SELECT).
+- UPDATE: Modify existing records (UPDATE).
+- DELETE: Remove records (DELETE).
+
+Within SQL there is a sub language known as sqlite3, this is an easy to learn easy to execute language purely inside the vscode terminal.
+To access this the command will be $sqlite3 database_name this is allow you access the language. To exit all that is needed is for the user to type .quit.
+One last main command is .schema this calls on the actual database showing the user what the name of each header column is.
+
+BASIC SQLITE3
+===============
+
+One of the main commmands for sqlite3 would look like this:
+SELECT ______ FROM ______;
+This would allow the user to SELECT a column of their choosing FROM the database they have access too. Instead of choosing a single column or multiple by using a comma (SELECT _____, ____ FROM ...;) the user can use the * symbol, this selects all columns from the database.
+An add-on to the query above would be COUNT, this will tell you the number of items in the database, an example would be     SELECT COUNT(*) FROM database;.
+DISTINCT brings out a table like this:
+SELECT DISTINCT head FROM database; - 
++--------+
+|  Head  |
++--------+
+|  data1 |
+|  data2 |
+|  data3 |
++--------+
+Using COUNT along with DISTINCT will show you the number of each instead of the items in the column.
+SELECT COUNT(DISTINCT head) FROM database;.
+
+These are some other add ons to most of the queries above.
+- WHERE: Used to filter records based on specific conditions.
+- LIKE: Used for pattern matching in a string (e.g., using % for wildcards).
+- ORDER BY: Sorts the result set by one or more columns.
+- LIMIT: Limits the number of rows returned by a query.
+- GROUP BY: Groups rows sharing a common value (usually combined with aggregate functions like COUNT, SUM, etc.).
+
+You would use the WHERE for you want to focus on specific queries like if you wanted to find out how many are in data1 you would type something like this:
+SELECT COUNT(*) FROM database WHERE head = 'data1';
+Then you would be able to use AND to gain another specific piece of information:
+
+The CS50 example was:
+
+SELECT COUNT(*) FROM favourites WHERE language = 'C' AND problem = 'Hello, World';
+This would only count the number of people who chose C as language and problem as Hello, World together.
+If the query:
+SELECT language, COUNT(*) FROM favourites GROUP BY language;
+The table would show:
++----------+----------+
+| Language | COUNT(*) |
++----------+----------+
+| C        |    78    |
+| Pyhton   |   280    |
+| Scratch  |    40    |
++----------+----------+
+
+You can replace the * symbol with a chosen word you want displayed for example if you wanted it to be n then it would go as follows:
+
+SELECT language, COUNT(n) FROM favourites GROUP BY language;
+The table would show:
++----------+----------+
+| Language |    n     |
++----------+----------+
+| C        |    78    |
+| Pyhton   |   280    |
+| Scratch  |    40    |
++----------+----------+
+
+There can also be ordering preferences in these queries, one of them is DESC (descending) if we use the last example it would order them in the highest to lowest number (descending order).
+
+SELECT language, COUNT(n) FROM favourites GROUP BY language ORDER BY COUNT(n) DESC;
+
++----------+----------+
+| Language |    n     |
++----------+----------+
+| Python   |   280    |
+| C        |    78    |
+| Scratch  |    40    |
++----------+----------+
+
+Adding new columns into the database is possible by using the INSERT INTO query this allows you to add in some extra data that has been given after the initial database has been made.
+
+INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...);
+
+Above is what the query would look like, on the examples above we could use it like so:
+
+INSERT INTO favourites (language, problem) VALUES ('SQL', 'Fiftyville');
+
+This would add in a new row at the bottom of the table making it have new values like:
+
++----------+----------+
+| Language |    n     |
++----------+----------+
+| Python   |   280    |
+| C        |    78    |
+| Scratch  |    40    |
+| SQL      |     1    |
++----------+----------+
+It would also add Fiftyville into the problems column and that would also read 1 on the count.
+
+
+Finally DELETE FROM is a way to remove data, if used incorrectly it can wipe the whole database which in turn could cause problems if there was no back ups of it.
+If DELETE FROM favourites was entered then this is what causes the database to be wiped to use it correctly it would be inputted like this:
+
+DELETE FROM favourites WHERE Timestamp IS Null;
+
+This would remove the data we added in the lines above (SQL and Fiftyville) as all other data was collected by form so included a time and date of when it was recorded.
 
