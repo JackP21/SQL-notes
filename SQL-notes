@@ -45,3 +45,46 @@ These are some other add ons to most of the queries above.
 - LIMIT
 - GROUP BY
 
+You would use the WHERE for you want to focus on specific queries like if you wanted to find out how many are in data1 you would type something like this:
+SELECT COUNT(*) FROM database WHERE head = 'data1';
+Then you would be able to use AND to gain another specific piece of information:
+
+The CS50 example was:
+SELECT COUNT(*) FROM favourites WHERE language = 'C' AND problem = 'Hello, World';
+This would only count the number of people who chose C as language and problem as Hello, World together.
+If the query:
+SELECT language, COUNT(*) FROM favourites GROUP BY language;
+The table would show:
++----------+----------+
+| Language | COUNT(*) |
++----------+----------+
+| C        |    78    |
+| Pyhton   |   280    |
+| Scratch  |    40    |
++----------+----------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
