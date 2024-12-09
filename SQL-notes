@@ -1,3 +1,22 @@
+
 SQL
+
 ======
 
+SQL (Structured Query Language) is a programming language used to manage and manipulate relational databases. 
+It allows users to interact with databases by using operations such as:
+- Querying
+- Updating
+- Inserrting
+- Deleting
+
+One of the SQL uses are for flat file databases, these include TXT files and CSV files, the files are mainly text files filled with lines and lines of data for the chosen subject. 
+
+CRUD is an anagram that is commonly used throughout SQL, these key words are:
+- CREATE
+- READ
+- UPDATE
+- DElETE
+
+Within SQL there is a sub language known as sqlite3, this is an easy to learn easy to execute language purely inside the vscode terminal.
+To access this the command will be $sqlite3 this is allow you access the language. To exit all that is needed is for the user to type .quit
