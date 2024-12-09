@@ -36,4 +36,12 @@ SELECT DISTINCT head FROM database; -
 |  data  |
 +--------+
 Using COUNT along with DISTINCT will show you the number of each instead of the items in the column.
-SELECT COUNT(DISTINCT head) FROM database;
+SELECT COUNT(DISTINCT head) FROM database;.
+
+These are some other add ons to most of the queries above.
+- WHERE
+- LIKE
+- ORDER BY
+- LIMIT
+- GROUP BY
+
