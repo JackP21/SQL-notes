@@ -26,3 +26,7 @@ Here I have created a small Repository on the basic understanding for SQL using 
     - AND
     - INSERT INTO
     - DELETE FROM
+
+EDIT: 
+
+I have added a new file for aggregate queries and in there is some extra syntax used.
