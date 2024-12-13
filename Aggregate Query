@@ -1,0 +1,21 @@
+
+Aggregate Query
+
+===================================
+
+An aggregate query refers to a query that performs some kind of aggregation operation on data, this is typically to calculate a summary of statistics or to gather insights across multiple records. 
+
+Common aggregate operations include:
+
+- COUNT - Counts the number of records or rows.
+- SUM - Adds up values in a numeric column.
+- AVG - Computes the average value of a numeric column.
+- MIN - Finds the minimum value in a column.
+- MAX - Finds the maximum value in a column.
+- GROUP BY - Groups the data based on one or more columns and then applies an aggregate function to each group.
+- HAVING - Filters groups based on a condition, often used with GROUP BY.
+
+Below is an example of what an aggregate query in SQL would look like:
+
+SELECT department, AVG(salary) AS avg_salary FROM employees GROUP BY department HAVING AVG(salary) > 50000;
+
