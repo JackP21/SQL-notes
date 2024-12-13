@@ -19,3 +19,4 @@ Below is an example of what an aggregate query in SQL would look like:
 
 SELECT department, AVG(salary) AS avg_salary FROM employees GROUP BY department HAVING AVG(salary) > 50000;
 
+In the above query we have used the SELECT to choose the column (for this we chose the department), we want to find the average salary (AVG) for each of the departments, FROM is pulling it from the employees table and grouping them (GROUP BY) by the department and finally using HAVING and AVG together to only see the ones with an average salary is less than or equal to 50000.
